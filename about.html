@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TextTranscribe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light background */
+            color: #333333; /* Dark text color for contrast */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            margin-bottom: 2rem;
+            background-color: #ffffff; /* White background for navbar */
+            border-bottom: 1px solid #e0e0e0; /* Light border */
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333333;
+            font-size: 1.125rem;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #007bff; /* Highlight color for active link */
+        }
+
+        .about-container {
+            padding: 3rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            font-size: 2.5rem;
+            color: #333333; /* Dark color for headings */
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #007bff; /* Blue underline for emphasis */
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-text {
+            background-color: #ffffff; /* White background for text area */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
+            line-height: 1.6; /* Increase line height for readability */
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem; /* Increased margin for spacing between paragraphs */
+            color: #333333; /* Dark text color */
+        }
+
+        .about-text ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem; /* Added margin for spacing between lists */
+        }
+
+        .about-text ul li {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem; /* Increased margin for spacing between list items */
+            padding-left: 2rem; /* Adjust padding for better alignment */
+            position: relative;
+        }
+
+        .about-text ul li::before {
+            content: "\2022"; /* Custom bullet */
+            color: #007bff; /* Blue bullet */
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 0.2rem; /* Adjusted position for better alignment */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 2rem 1rem;
+            }
+
+            .about-container h2 {
+                font-size: 2rem;
+            }
+
+            .about-text p, .about-text ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">TextTranscribe</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="container mt-5 about-container">
+        <h2>About Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="about-text">
+                    <p>
+                        At <strong>TextTranscribe</strong>, we’re dedicated to revolutionizing the way you manage and utilize your documents. Our platform leverages state-of-the-art Optical Character Recognition (OCR) technology to effortlessly convert your PDFs into text. With an unwavering commitment to speed and accuracy, we cater to both simple and complex document needs.
+                    </p>
+                    <p>
+                        Whether you’re a student looking to extract text from research papers, a professional dealing with extensive reports, or anyone in between, our user-friendly interface ensures a seamless experience from start to finish. No sign-ups, no hassle – just straightforward, efficient text extraction.
+                    </p>
+                    <p><strong>Our Key Features:</strong></p>
+                    <ul>
+                        <li>Precision OCR technology for accurate text extraction.</li>
+                        <li>Effortless handling of multi-page PDFs.</li>
+                        <li>Swift processing with an intuitive, easy-to-use interface.</li>
+                    </ul>
+                    <p><strong>Why Choose Us?</strong></p>
+                    <ul>
+                        <li>Design crafted for simplicity and efficiency.</li>
+                        <li>Instant access without the need for account creation.</li>
+                        <li>Robust security measures to protect your files.</li>
+                    </ul>
+                    <p>
+                        Join the many users who trust <strong>TextTranscribe</strong> for their document conversion needs. Embrace a tool that combines innovation with user-centric design to enhance your productivity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

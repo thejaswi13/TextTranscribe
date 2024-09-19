@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextTranscribe - OCR PDF to Text</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TextTranscribe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    {% if 'user' in session %}
+                        <li class="nav-item">
+                            <span class="navbar-text text-primary">
+                                Logged in as <strong>{{ session['user'] }}</strong>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="/logout">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="/signup">Sign Up</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start mb-4 mb-md-0">
+                    <h1 class="display-4">TextTranscribe</h1>
+                    <p class="lead">Upload your PDF documents and extract editable text with our OCR technology!</p>
+                    <a href="#upload-section" class="btn btn-light btn-lg">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='icon1.jpeg') }}" alt="Document processing" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload-section" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="text-primary">Upload your PDF</h2>
+            <p class="mb-4">Convert your PDF documents into editable text easily.</p>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="mb-3" style="max-width: 600px; margin: 0 auto;">
+                    <input class="form-control" type="file" name="file" accept=".pdf">
+                </div>
+                <!-- <div class="mb-3" style="max-width: 600px; margin: 0 auto;">
+                    <select name="language" class="form-select">
+                        <option value="eng">English</option>
+                        <option value="fra">French</option>
+                        <option value="spa">Spanish</option>
+                        <option value="hin">Hindi</option>
+                        <option value="tel">Telugu</option>
+                        Add more languages as needed
+                     </select> -->
+                <!-- </div>  -->
+                <button type="submit" class="btn btn-primary btn-lg">Convert PDF to Text</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <h2 class="text-center text-primary">Features & Advantages</h2>
+            <div class="row mt-4 text-center">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='icon2.jpeg') }}" alt="Feature 1" class="img-fluid mb-3" style="width: auto; height: 240px;">
+                    <h4>Fast Conversion</h4>
+                    <p>Get your text extracted in seconds with our efficient OCR engine.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='icon3.jpeg') }}" alt="Feature 2" class="img-fluid mb-3" style="width: auto; height: 240px;">
+                    <h4>Accurate OCR</h4>
+                    <p> OCR engine provides highly accurate text recognition</p>
+                    </div>
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='icon4.jpeg') }}" alt="Feature 3" class="img-fluid mb-3" style="width: auto; height: 240px;">
+                    <h4>Secure</h4>
+                    <p>Your documents are processed securely and privately on our servers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>© 2024 TextTranscribe. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
